@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gandhi Jayanti Special</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffdf7;
+            color: #333;
+            line-height: 1.7;
+        }
+        /* =========================
+           NAVBAR
+        ========================= */
+        nav {
+            width: 100%;
+            padding: 100px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+        .logo {
+            font-size: 100px;
+            font-weight: bold;
+            color: #d97706;
+          
+        }
+        .nav-links {
+            display: flex;
+            gap: 50px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 60px;
+            margin-top: 80px;
+            background: linear-gradient(to right, #d8b4fe, #f9a8d4);
+        }
+        .nav-links a:hover {
+            color: #e85d04;
+        }
+        /* =========================
+           HERO SECTION
+        ========================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background:
+                linear-gradient(
+ rgba(255, 255, 255, 0.72),  rgba(255, 247, 230, 0.92)
+                ),url("https://upload.wikimedia.org/wikipedia/commons/7/7c/Gandhi_at_Dandi%2C_1930.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Ashoka Chakra */
+        .hero::before {
+            content: "☸";
+            position: absolute;
+            font-size: 350px;
+            color: rgba(0, 91, 150, 0.07);
+            animation: rotate 25s linear infinite;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            animation: fadeUp 1.5s ease;
+        }
+        .special {
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #e85d04;
+            margin-bottom: 5px;
+        }
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 110px);
+            color: #333;
+            line-height: 1;
+        }
+        .hero h2 {
+            font-size: clamp(30px, 5vw, 55px);
+            color: #e85d04;
+            margin: 5px 0;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 30px;
+            background: #e85d04;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #bc4500;
+            transform: translateY(-4px);
+        }
+        /* =========================
+           COMMON SECTION
+        ========================= */
+        .section {
+            padding: 90px 7%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #e85d04;
+            margin: 15px auto 45px;
+            border-radius: 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            margin-top: -30px;
+            margin-bottom: 45px;
+            color: #777;
+        }
+        /* =========================
+           ABOUT
+        ========================= */
+        .about-box {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-image {
+            text-align: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+        .about-text h2 {
+            font-size: 32px;
+            color: #e85d04;
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        .info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .info div {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+        .info b,
+        .info span {
+            display: block;
+        }
+        .info b {
+            color: #e85d04;
+        }
+        /* =========================
+           MOVEMENTS
+        ========================= */
+        .movements-section {
+            background: #fff7e8;
+        }
+        .cards {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08) ;  
+              transition: 0.4s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 22px;
+        }
+        .card-content span {
+            background: #e85d04;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .card h3 {
+            margin: 15px 0 8px;
+            font-size: 23px;
+        }
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+        /* =========================
+           TIMELINE
+        ========================= */
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #e85d04;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            width: 50%;
+            padding: 20px 40px;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+        .year {
+            display: inline-block;
+            background: #e85d04;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        .timeline-content {
+            background: white;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow:
+       0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .timeline-content h3 {
+            color: #e85d04;
+        }
+        /* =========================
+           QUOTES
+        ========================= */
+        .quotes {
+            padding: 100px 20px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1dc,
+                    #ffffff    );
+        }
+        .quote-box {
+            max-width: 800px;
+            margin: auto;
+        }
+        .chakra {
+            font-size: 70px;
+            color: #005b96;
+            animation: rotate 15s linear infinite;  }
+        .quote-box h2 {
+            font-size: 38px;
+            margin: 10px 0 25px;
+        }
+        .quote-box p {
+            font-size: 28px;
+            font-style: italic;
+            color: #555;
+        }
+        .quote-box span {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #e85d04;
+        }
+        /* =========================
+           MESSAGE
+        ========================= */
+        .message {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f8fafc;
+        }
+        .message h2 {
+            color: #005b96;
+            font-size: 35px;
+        }
+        .message p {
+            margin: 20px auto;
+            max-width: 650px;
+            font-size: 18px;
+        }
+        .message h3 {
+            font-size: 30px;
+
+            color: #e85d04;
+        }
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            background: #222;
+
+            color: white;
+        }
+        footer p {
+            margin: 5px;
+        }
+        /* =========================
+           ANIMATIONS
+        ========================= */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* =========================
+           TABLET
+        ========================= */
+        @media (max-width: 1000px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .about-image img {
+                max-width: 320px;
+            }
+        }
+        /* =========================
+           MOBILE
+        ========================= */
+        @media (max-width: 650px) {
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .logo {
+                font-size: 19px;
+            }
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 13px;
+            }
+            .hero {
+                padding-top: 150px;
+            }
+            .hero h1 {
+                font-size: 55px;
+            }
+            .hero h2 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 17px;
+            }
+            .section {
+                padding: 65px 5%;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .info {
+                grid-template-columns: 1fr;
+            }
+            /* Mobile Timeline */
+            .timeline::before {
+                left: 10px;
+            }
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+
+                width: 100%;
+
+                margin-left: 0;
+
+                padding-left: 35px;
+
+                padding-right: 0;
+            }
+            .quote-box p {
+                font-size: 21px;
+            }
+
+
+            .message h2 {
+                font-size: 27px;
+            }
+
+        }
+      .moving-text {
+    background: linear-gradient(to right, #e6c8f0, #f8c6d8);
+    color: #6a3d78;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
+      }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <nav>
+        <div class="logo">
+            🇮🇳 Gandhi Jayanti
+        
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#movements">Movements</a>
+            <a href="#timeline">Timeline</a>
+        </div>
+    </div>
+    </nav>
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="special">
+                GANDHI JAYANTI SPECIAL
+            </p>
+
+
+            <h1>
+                Mahatma Gandhi
+            </h1>
+
+
+            <h2>
+                Father of the Nation
+            </h2>
+
+            <h3>
+                A great leader who followed the path
+                of truth, non-violence and peace.
+            </h3>
+            <a href="#about" class="btn">
+                Learn About Him ↓
+            </a>
+        </div>
+    </section>
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section id="about" class="section">
+
+        <h2 class="section-title">
+           * About Mahatma Gandhi
+        </h2>
+        <div class="about-box">
+            <div class="about-image">
+                <img   src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Portrait_Gandhi.jpg"
+                    alt="Mahatma Gandhi">
+            </div>
+            <div class="about-text">
+                <h1>
+                    Mohandas Karamchand Gandhi
+                </h1>
+                <h3>
+                    Mahatma Gandhi's full name was
+                    Mohandas Karamchand Gandhi.
+                    He was born on
+                    <b>2 October 1869</b>
+    in Porbandar, Gujarat.</h3>  
+    <h3>   Gandhi played an important role  in India's freedom movement. He promoted truth, non-violence  and peaceful resistance.
+       </h3>  <h3>
+                    Every year, <b>2 October</b> is
+                    celebrated as Gandhi Jayanti in India.
+                    The day is also observed by the United
+                    Nations as the International Day
+                    of Non-Violence.
+                </h3>
+                <div class="info">
+                    <div>
+                        <b>Born</b>
+                        <span>
+                            2 October 1869
+                        </span>
+                    </div>
+                    <div>
+                        <b>Birthplace</b>
+                        <span>
+                            Porbandar, Gujarat
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>Died</b>
+
+                        <span>
+                            30 January 1948
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MAJOR MOVEMENTS
+    ========================== -->
+
+    <section id="movements"
+             class="section movements-section">
+
+
+        <h2 class="section-title">
+           * Major Movements
+        </h2>
+
+
+        <p class="section-subtitle">
+            Major movements associated with Gandhi's
+            role in India's freedom struggle
+        </p>
+        <div class="cards">
+            <!-- Champaran -->
+   <div class="card"><marquee>
+ <img src="champaranjpg.jpg"alt="Champaran Satyagraha"><img src="aaaa.jpg"> <img src="bbbb.jpg"><img src="cccc.jpg"><img src="dddd.jpg"><img src="eeee.jpg">
+   <img src="ffff.jpg">
+     <img src="gggg.jpg"></marquee>
+   <div class="card-content">
+ <span>1917</span>
+ <h3>
+      Champaran Satyagrah
+ </h3> 
+  <p>  The Champaran Satyagraha was the first major Satyagraha movement led by Mahatma Gandhi in India. It took place in Champaran, Bihar, in 1917.
+At that time, British indigo planters forced many farmers to grow indigo (नील) on part of their land under the Tinkathia system. The farmers received very little benefit and faced financial difficulties and exploitation.
+A farmer named Raj Kumar Shukla requested Gandhi to come to Champaran and see the problems of the farmers. Gandhi visited Champaran and met the farmers. He collected information about their problems and organized a peaceful Satyagraha.
+The British authorities ordered Gandhi to leave Champaran, but he refused to leave and peacefully accepted the consequences. His action attracted public attention to the farmers' problems.
+Finally, the government appointed an inquiry committee, in which Gandhi participated. The farmers' complaints were investigated, and reforms were introduced. The Tinkathia system was abolished, giving relief to the farmers.
+Importance: The Champaran Satyagraha became an important early example of Gandhi's method of truth, non-violence, and peaceful resistance in India's freedom struggle.  </p>
+     </div>
+    </div>
+            <!-- Non Cooperation -->
+  <div class="card"> <marquee> <img
+src="nonjpg.jpg"  alt="Non-Cooperation Movement"> <img src="abc.jpg">
+  <img src="cde.jpg"><img src="fgh.jpg"><img src="ijk.jpg"><img src="lmn.jpg"><img src="opq.jpg"></marquee>
+  <div class="card-content">
+   <span>1920</span>
+        <h3>
+     Non-Cooperation Movement
+       </h3>
+  <p>  Gandhi led the Non-Cooperation Movement against British rule and encouraged  people to support Swadeshi and  self-reliance.There were several important reasons:
+Rowlatt Act (1919): This law allowed the British government to arrest people without a normal trial.
+Jallianwala Bagh Massacre (1919): Many unarmed people were killed when British troops opened fire on a gathering in Amritsar.
+Khilafat issue: Gandhi also supported the Khilafat movement, which was led by Indian Muslims.
+Demand for self-rule: Gandhi wanted Indians to stop cooperating with British institutions and work toward Swaraj (self-government).Gandhi encouraged Indians to peacefully:
+Boycott government schools and colleges.
+Boycott British courts and some government institutions.
+Boycott foreign cloth and goods.
+Promote Swadeshi goods and Khadi.
+Give up some government titles and honours.
+Participate in peaceful protests and public meetings.
+Chauri Chaura Incident (1922)
+On 5 February 1922, a violent incident took place at Chauri Chaura in Uttar Pradesh. A crowd attacked and burned a police station, resulting in the deaths of 22 policemen.
+Gandhi strongly opposed violence. Because the movement had turned violent, he decided to withdraw the Non-Cooperation Movement in February 1922.
+Importance
+The movement brought large numbers of ordinary Indians into the national freedom struggle. It also demonstrated Gandhi's approach of using non-violence and non-cooperation against British rule.
+     </p>
+     </div>
+   </div>
+            <!-- Dandi March -->
+    <div class="card"><marquee>
+     <img src="dandi.jpg" alt="Dandi March"><img src="sami.jpg"><img src="suha.jpg">
+    <img src="samo.jpg"><img src="saloni.jpg"></marquee>
+  <div class="card-content">
+  <span>1930</span>
+    <h3>
+       Dandi March
+   </h3>
+    <p> The Dandi March, also known as the Salt March or Salt Satyagraha, was an important movement led by Mahatma Gandhi against British rule in India. It began on 12 March 1930 and ended on 6 April 1930.
+Why did Gandhi start the Dandi March?
+At that time, the British government had imposed a salt tax and laws that restricted Indians from making or collecting salt. Gandhi considered the salt laws unfair because salt was an essential item used by everyone.
+Gandhi decided to protest against the salt laws through a peaceful march.
+The March
+Gandhi started the march from Sabarmati Ashram in Ahmedabad, Gujarat.
+He was accompanied by 78 selected volunteers at the beginning.
+They walked approximately 390 km (about 240 miles) to Dandi, a coastal village in Gujarat.
+The journey took 24 days.
+On 6 April 1930, Gandhi reached Dandi and broke the British salt law by making salt from seawater.Gandhi's action encouraged people across India to join the Civil Disobedience Movement. Many people began making salt, boycotting foreign goods, and peacefully breaking other colonial laws.
+The British government arrested Gandhi and many other protesters. The movement continued in different parts of India.
+Importance of the Dandi March
+The Dandi March became an important symbol of non-violent resistance against British rule. It showed how an everyday item like salt could unite people in a nationwide protest.
+    </p>
+   </div>
+    </div>
+            <!-- Quit India -->
+   <div class="card"><marquee>
+  <img  src="xxx.jpg" alt="Quit India Movement"><img src="123.jpg"><img src="456.jpg">
+   <img src="234.jpg"><img src="456.jpg"></marquee>
+      <div class="card-content">
+     <span>1942</span>
+    <h3>
+      Quit India Movement
+   </h3>
+  <p>  In 1942, Gandhi called for the Britis to leave India. The movement becamean important phase of India's strugglefor independence. During World War II, Britain involved India in the war without consulting Indian political leaders. The failure of the Cripps Mission in 1942 also increased dissatisfaction among Indian nationalists.
+Gandhi and the Congress demanded that the British leave India immediately and give Indians the right to govern their own country.
+Beginning of the Movement
+The All India Congress Committee passed the Quit India resolution in Bombay (now Mumbai) on 8 August 1942.
+Gandhi gave the famous call:
+“Do or Die.”
+The movement officially began on 9 August 1942. Gandhi and many other Congress leaders were arrested soon afterward by the British authorities.
+What happened during the movement?
+Because many major leaders were arrested, protests continued through the participation of ordinary people. There were:
+Strikes and demonstrations
+Boycotts of British institutions
+Public protests
+Underground activities
+Disruption of some government communications and services
+The British government used arrests and other measures to suppress the movement.
+Importance of the Quit India Movement
+The movement became a major mass movement against British rule. Although it was suppressed by the British authorities during the war, it demonstrated the widespread demand for Indian independence.
+India eventually became independent on 15 August 1947. </p>
+  </div>
+ </div>
+</div> 
+</section>
+    <!-- =========================
+         TIMELINE
+    ========================== -->
+
+    <section id="timeline"
+             class="section timeline-section">
+
+
+        <h2 class="section-title">
+            * Gandhi's Life — A Timeline
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="year">
+                    1869
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Birth
+                    </h3>
+ <p>  Gandhi was born on  2 October 1869 in Porbandar, </p>
+                </div>
+              <!-- Moving Text - Website ke sabse niche -->
+<div class="moving-text">
+    <marquee direction="left" scrollamount="5">
+        2 October | Remembering the ideals of Mahatma Gandhi
+    </marquee>
+</div>
+
